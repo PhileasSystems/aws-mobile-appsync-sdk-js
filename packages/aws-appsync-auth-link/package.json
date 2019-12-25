@@ -1,6 +1,6 @@
 {
-  "name": "aws-appsync-auth-link",
-  "version": "2.0.1",
+  "name": "@phileas/aws-appsync-auth-link",
+  "version": "2.0.2",
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "description": "AWS Mobile AppSync Auth Link for JavaScript",
@@ -18,9 +18,7 @@
     "test": "jest --coverage --coverageReporters=text",
     "test-watch": "jest --watch"
   },
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "peerDependencies": {
     "apollo-link": "^1.2.3",
     "aws-sdk": "^2.518.0",
