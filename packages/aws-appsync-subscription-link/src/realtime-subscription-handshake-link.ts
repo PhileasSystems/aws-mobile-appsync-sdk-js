@@ -2,7 +2,7 @@
  * Copyright 2017-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-import { ApolloLink, Observable, Operation, FetchResult } from "apollo-link";
+import { ApolloLink, Observable, Operation, FetchResult } from "@apollo/client";
 
 import { rootLogger } from "./utils";
 
@@ -12,7 +12,7 @@ import {
   AUTH_TYPE,
   USER_AGENT_HEADER,
   USER_AGENT
-} from "aws-appsync-auth-link";
+} from "@phileas/aws-appsync-auth-link";
 import { GraphQLError, print } from "graphql";
 import * as url from "url";
 import { v4 as uuid } from "uuid";
