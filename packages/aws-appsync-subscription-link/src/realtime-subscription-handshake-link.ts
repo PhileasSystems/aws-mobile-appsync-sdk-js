@@ -717,6 +717,9 @@ export class AppSyncRealTimeSubscriptionHandshakeLink extends ApolloLink {
   }
 
   private _timeoutStartSubscriptionAck(subscriptionId) {
+    if(!this.subscriptionObserverMap.get(subscriptionId)){
+      return;
+    }
     const { observer, query, variables } = this.subscriptionObserverMap.get(
       subscriptionId
     );
