@@ -648,6 +648,7 @@ export class AppSyncRealTimeSubscriptionHandshakeLink extends ApolloLink {
         });
       } else {
         logger(`observer not found for id: ${id}`);
+        return;
       }
 
       const subscriptionState = SUBSCRIPTION_STATUS.CONNECTED;
@@ -685,6 +686,11 @@ export class AppSyncRealTimeSubscriptionHandshakeLink extends ApolloLink {
         subscriptionState
       });
 
+      if(!observer){
+        logger(`Observer not found Error -> Connection failed: ${JSON.stringify(payload)}`);
+        clearTimeout(startAckTimeoutId);
+        return;
+      }
       observer.error({
         errors: [
           {
